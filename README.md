@@ -4,7 +4,8 @@ Mysql database:
 
 Integration tests:
 
-![image](https://github.com/Procentguide2/springtest/assets/99178092/d1560e24-a193-4fee-ab4d-15091acbb714)
+![image](https://github.com/Procentguide2/springtest/assets/99178092/10b0abb0-0f79-4c94-9261-62ee658b1444)
+
 
 ----API----
 
