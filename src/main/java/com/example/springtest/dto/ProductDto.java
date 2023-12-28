@@ -1,36 +1,20 @@
-package com.example.springtest.model;
-
-import jakarta.persistence.*;
+package com.example.springtest.dto;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "product")
-public class Product {
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class ProductDto {
 
-    @Column(name = "entry_date")
     private LocalDate entryDate;
 
-    @Column(name = "item_code")
     private Integer itemCode;
 
-    @Column(name = "item_name", length = 100)
     private String itemName;
 
-    @Column(name = "item_quantity")
     private Integer itemQuantity;
 
-    @Column(name = "item_status", length = 100)
     private String itemStatus;
 
-    public Product() {
-    }
-
-    public Product(LocalDate entryDate, Integer itemCode, String itemName, Integer itemQuantity, String itemStatus) {
+    public ProductDto(LocalDate entryDate, Integer itemCode, String itemName, Integer itemQuantity, String itemStatus) {
         this.entryDate = entryDate;
         this.itemCode = itemCode;
         this.itemName = itemName;
@@ -38,12 +22,7 @@ public class Product {
         this.itemStatus = itemStatus;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public ProductDto() {
     }
 
     public LocalDate getEntryDate() {
@@ -85,5 +64,4 @@ public class Product {
     public void setItemStatus(String itemStatus) {
         this.itemStatus = itemStatus;
     }
-
 }

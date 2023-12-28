@@ -1,7 +1,5 @@
 package com.example.springtest.form;
 
-import java.util.regex.Pattern;
-
 public class RegisterForm {
 
     private String username;

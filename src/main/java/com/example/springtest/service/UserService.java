@@ -29,7 +29,6 @@ public class UserService {
             throw new UserExistException("There is an account with that email username: " + form.getUsername());
         }
 
-
         User user = new User(form.getUsername(),passwordEncoder.encode(form.getPassword()));
         sysUserRepository.save(user);
 

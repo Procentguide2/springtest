@@ -7,7 +7,6 @@ import com.example.springtest.jwt.JwtResponse;
 import com.example.springtest.jwt.JwtTokenUtil;
 import com.example.springtest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
