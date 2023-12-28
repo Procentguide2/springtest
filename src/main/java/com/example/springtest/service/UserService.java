@@ -23,6 +23,10 @@ public class UserService {
         return sysUserRepository.findByUsername(username);
     }
 
+    public void deleteByUsername(String username){
+        sysUserRepository.delete(findUserByUsername(username));
+    }
+
     public void saveUserFromForm(RegisterForm form) throws UserExistException {
         Optional<User> foundUser = Optional.ofNullable(sysUserRepository.findByUsername(form.getUsername()));
         if (foundUser.isPresent()){

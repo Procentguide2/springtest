@@ -2,7 +2,6 @@ package com.example.springtest.controller;
 
 import com.example.springtest.exception.UserExistException;
 import com.example.springtest.form.RegisterForm;
-import com.example.springtest.jwt.JwtRequest;
 import com.example.springtest.jwt.JwtResponse;
 import com.example.springtest.jwt.JwtTokenUtil;
 import com.example.springtest.service.UserService;
@@ -46,12 +45,12 @@ public class UserController {
 
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody RegisterForm form) throws Exception {
 
-        authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+        authenticate(form.getUsername(), form.getPassword());
 
         final UserDetails userDetails = jwtInMemoryUserDetailsService
-                .loadUserByUsername(authenticationRequest.getUsername());
+                .loadUserByUsername(form.getUsername());
 
         final String token = jwtTokenUtil.generateToken(userDetails);
 
