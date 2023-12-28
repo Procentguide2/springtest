@@ -1,6 +1,5 @@
 package com.example.springtest;
 
-import com.example.springtest.controller.UserController;
 import com.example.springtest.dto.ProductDto;
 import com.example.springtest.exception.UserExistException;
 import com.example.springtest.form.RecordsForm;
@@ -23,9 +22,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
