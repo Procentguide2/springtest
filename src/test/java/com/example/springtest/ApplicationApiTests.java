@@ -124,15 +124,15 @@ class ApplicationApiTests {
     }
 
     @Test
-    void saveRecordsWithInvalidTokenMustThrowNullPtr() {
+    void saveRecordsWithInvalidTokenMustBeForbidden() throws Exception {
 
-        assertThrows(NullPointerException.class, () -> mvc.perform(MockMvcRequestBuilders
+        mvc.perform(MockMvcRequestBuilders
                         .post("/products/add")
                         .content(asJsonString(recordsForm))
                         .contentType(MediaType.APPLICATION_JSON)
                         .header("Authorization", "Bearer " + invalidToken)
                         .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isForbidden()));
+                .andExpect(status().isForbidden());
     }
 
     @Test
@@ -153,13 +153,13 @@ class ApplicationApiTests {
     }
 
     @Test
-    void getProductsWithInvalidTokenMustThrowNullPtr() {
+    void getProductsWithInvalidTokenMustBeForbidden() throws Exception {
 
-        assertThrows(NullPointerException.class, () -> mvc.perform(MockMvcRequestBuilders
+        mvc.perform(MockMvcRequestBuilders
                         .get("/products/all")
                         .header("Authorization", "Bearer " + invalidToken)
                         .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isForbidden()));
+                .andExpect(status().isForbidden());
     }
 
     @AfterEach
