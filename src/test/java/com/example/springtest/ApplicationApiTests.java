@@ -93,7 +93,7 @@ class ApplicationApiTests {
     }
 
     @Test
-    void authenticateUserApiMustBeBadRequest() throws Exception {
+    void authenticateUserApiMustBeForbidden() throws Exception {
 
         mvc.perform(MockMvcRequestBuilders
                         .post("/user/authenticate")
